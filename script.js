@@ -7,13 +7,15 @@ onload = () => {
 
 // script.js
 onload = () => {
-  // trigger bloom
-  setTimeout(() => {
-    document.body.classList.remove("not-loaded");
-  }, 1000);
+  const audio = document.getElementById('bg-music');
+  const ph = document.querySelector('.picture-placeholder');
 
-  // reveal & start scroll‐animation
-  setTimeout(() => {
-    document.querySelector(".picture-placeholder").classList.add("show");
-  }, 6000);
+  document.body.addEventListener('click', () => {
+    // 1) start bloom & audio together
+    document.body.classList.remove('not-loaded');
+    audio.play().catch(() => {});
+
+    // 2) reveal/scrol­l filmstrip after ~6s
+    setTimeout(() => ph.classList.add('show'), 6000);
+  }, { once: true });
 };

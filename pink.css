@@ -32,7 +32,7 @@ body {
   width: 100%;
   height: 100%;
   filter: blur(0.1vmin);
-  background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)), radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.2)), repeating-linear-gradient(220deg, black 0px, black 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, black 0px, black 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, black 0px, black 19px, transparent 19px, transparent 22px), linear-gradient(90deg, #f200ff, #e114c6);
+  background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)), radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.2)), repeating-linear-gradient(220deg, black 0px, black 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, black 0px, black 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, black 0px, black 19px, transparent 19px, transparent 22px), linear-gradient(90deg, #00fffa, #f0f0f0);
 }
 
 .flowers {
@@ -67,7 +67,7 @@ body {
 /* the scrolling strip */
 .filmstrip {
   display: flex;
-  animation: scrollFilm 20s linear infinite;
+  animation: scrollFilm 12s linear infinite;
 }
 @keyframes scrollFilm {
   0%   { transform: translateX(0); }
@@ -202,7 +202,7 @@ body {
   transform: translate(-50%, -100%);
   width: 8vmin;
   height: 8vmin;
-  background-color: var(--flower-glow);
+  background-color: #6bf0ff;
   filter: blur(10vmin);
 }
 .flower__leaf {
@@ -212,8 +212,8 @@ body {
   width: 8vmin;
   height: 11vmin;
   border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
-  background-color: var(--flower-petal-light);
-  background-image: linear-gradient(to top, var(--flower-petal-dark), var(--flower-petal-light));
+  background-color: #a7ffee;
+  background-image: linear-gradient(to top, #54b8aa, #a7ffee);
   transform-origin: bottom center;
   opacity: 0.9;
   box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
@@ -233,7 +233,7 @@ body {
   transform-origin: bottom left;
   border-radius: 4vmin 10vmin 4vmin 4vmin;
   transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
-  background-image: linear-gradient(to top, var(--flower-petal-dark), var(--flower-petal-light));
+  background-image: linear-gradient(to top, #39c6d6, #a7ffee);
   z-index: 1;
   opacity: 0.8;
 }
@@ -1055,33 +1055,4 @@ body {
 }
 .not-loaded * {
   animation-play-state: paused !important;
-}
-/* ───────────────────────────────────────────────────────────────── */
-/* Override flower parts to pink */
-:root {
-  --pink-light: #ffb6c1;
-  --pink-dark:  #ff69b4;
-}
-
-/* Petals */
-.flower__leaf {
-  background-color: var(--pink-light) !important;
-  background-image: linear-gradient(to top, var(--pink-dark), var(--pink-light)) !important;
-}
-
-/* The smaller “4” leaf shape */
-.flower__leaf--4 {
-  background-image: linear-gradient(to top, var(--pink-dark), var(--pink-light)) !important;
-}
-
-/* Stems / branches */
-.flower__line {
-  /* a solid-to-solid pink gradient instead of green/black */
-  background-image:
-    linear-gradient(to left, transparent, var(--pink-dark), var(--pink-light)) !important;
-}
-
-/* The little leaf-accents on the stems */
-.flower__line__leaf {
-  background-image: linear-gradient(to top, var(--pink-dark), var(--pink-light)) !important;
 }
